@@ -2,21 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-/* カスタムスタイル */
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #10b981;
-  --text-color: #1f2937;
-  --bg-color: #ffffff;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
 }
 
-/* スムーススクロール */
-html {
-  scroll-behavior: smooth;
+/* ハンバーガーメニューのアニメーション */
+.hamburger .bar {
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* アコーディオン */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-header.priority {
+  background-color: #FFFBEB;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
 }
